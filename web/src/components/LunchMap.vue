@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref, watch } from "vue";
 import L from "leaflet";
-import { state, rows, euro, tier } from "../lib/store";
+import { state, rows, euro, tier, selectVenue } from "../lib/store";
 import { getBasemap, getUnpriced } from "../lib/api";
 
 const el = ref(null);
@@ -36,7 +36,7 @@ function drawDeals() {
       title: v.name,
       riseOnHover: true,
       zIndexOffset: v.id === state.selectedId ? 1000 : 0,
-    }).on("click", () => (state.selectedId = v.id));
+    }).on("click", () => selectVenue(v, "map"));
     m.addTo(dealLayer);
     markers.set(v.id, m);
   }

@@ -74,6 +74,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .back:hover { color: var(--ink); }
 .detail h2 { font: 700 22px var(--display); margin: 4px 0 0; text-wrap: balance; }
 .detail h3 { font: 700 11px var(--body); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 14px 0 2px; }
+.directions { justify-self: start; margin-top: 6px; font: 600 13px var(--body); color: var(--ten-ink); background: var(--ten);
+  text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+.directions:hover { filter: brightness(1.08); }
 .menu li { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .menu .deal { padding: 10px 12px; margin-top: 4px; border: 1px solid var(--line); border-radius: 8px; background: var(--ground); }
 .menu-price { font-variant-numeric: tabular-nums; font-weight: 600; }

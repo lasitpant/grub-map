@@ -22,6 +22,20 @@ Refresh OSM data: `python3 pipeline/fetch_osm.py` and `python3 pipeline/fetch_ba
 The frontend reads data through `web/src/lib/api.js`. Set `VITE_API_BASE` (see `web/.env.example`)
 to switch from static JSON to a backend serving `/venues`, `/venues/unpriced`, `/menus`, `/menus/:brand`.
 
+## Analytics
+Anonymous, cookieless counting with [GoatCounter](https://www.goatcounter.com). Set `VITE_GOATCOUNTER_CODE`
+(see `web/.env.example`); leave it unset to disable. No cookies, no stored IPs, nothing per-person.
+
+| Event path | Counted when |
+|---|---|
+| `/` (page view) | Someone opens the site (GoatCounter also gives referrer, country, browser, screen size) |
+| `venue/<brand>` | A venue is opened; the title says whether from the `list` or the `map` |
+| `directions/<brand>` | "Walk there in Google Maps" is clicked |
+| `website/<brand>`, `source/<brand>` | The venue website or a price source is opened |
+| `filter/budget-10`, `filter/budget-12` | The budget toggle is changed |
+| `filter/cuisine/<name>`, `filter/show-unpriced` | Cuisine filter or unpriced layer is used |
+| `empty/<budget>/<cuisine>` | A filter combination returns no spots |
+
 ## Licence
 - **Code:** MIT, see [LICENSE](LICENSE).
 - **OpenStreetMap data** (`pipeline/data/osm_venues.json`, `pipeline/data/basemap.geojson`, and the files derived from them in `web/public/data/`):
