@@ -1,0 +1,382 @@
+{
+ "bambino": {
+  "brand": "bambino",
+  "name": "Bambino",
+  "category": "Pizza",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Large cheese pizza slice",
+    "price": 4.5,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
+   }
+  ]
+ },
+ "ayla": {
+  "brand": "ayla",
+  "name": "Ayla",
+  "category": "Turkish",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Kisir sandwich (Turkish wheat salad wrap)",
+    "price": 4.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
+   }
+  ]
+ },
+ "mini-india": {
+  "brand": "mini-india",
+  "name": "Mini India",
+  "category": "Indian",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Dahi tikki",
+    "price": 4.99,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
+   }
+  ]
+ },
+ "super-asia": {
+  "brand": "super-asia",
+  "name": "Super Asia",
+  "category": "Asian grocery",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "10 spring rolls + instant noodles",
+    "price": 5.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
+   }
+  ]
+ },
+ "disndat": {
+  "brand": "disndat",
+  "name": "Disndat",
+  "category": "Sandwiches",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Ham & cheese toastie with Tayto",
+    "price": 5.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
+   }
+  ]
+ },
+ "pi-pizza": {
+  "brand": "pi-pizza",
+  "name": "Pi Pizza",
+  "category": "Pizza",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Pizza slice",
+    "price": 5.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.dublintourism.org/cheap-eats-dublin/"
+   }
+  ]
+ },
+ "difontaine-s": {
+  "brand": "difontaine-s",
+  "name": "DiFontaine's",
+  "category": "Pizza",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Pizza slice",
+    "price": 5.5,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.dublintourism.org/cheap-eats-dublin/"
+   }
+  ]
+ },
+ "umi-falafel": {
+  "brand": "umi-falafel",
+  "name": "Umi Falafel",
+  "category": "Middle Eastern",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Falafel wrap",
+    "price": 7.5,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.dublintourism.org/cheap-eats-dublin/"
+   }
+  ]
+ },
+ "queen-of-tarts": {
+  "brand": "queen-of-tarts",
+  "name": "Queen of Tarts",
+  "category": "Café",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Savoury tart or sandwich",
+    "price": 7.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin"
+   }
+  ]
+ },
+ "turkish-kebab-house": {
+  "brand": "turkish-kebab-house",
+  "name": "Turkish Kebab House",
+  "category": "Turkish",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Doner wrap",
+    "price": 8.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers"
+   }
+  ]
+ },
+ "aobaba": {
+  "brand": "aobaba",
+  "name": "Aobaba",
+  "category": "Vietnamese",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Soup, sandwich & chips combo",
+    "price": 8.5,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin"
+   }
+  ]
+ },
+ "chopped": {
+  "brand": "chopped",
+  "name": "Chopped",
+  "category": "Salads & wraps",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Salad wrap",
+    "price": 9.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers"
+   }
+  ]
+ },
+ "boojum": {
+  "brand": "boojum",
+  "name": "Boojum",
+  "category": "Mexican",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Burrito",
+    "price": 9.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.dublintourism.org/cheap-eats-dublin/"
+   }
+  ]
+ },
+ "el-grito-taqueria": {
+  "brand": "el-grito-taqueria",
+  "name": "El Grito Taqueria",
+  "category": "Mexican",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Three tacos",
+    "price": 9.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.dublintourism.org/cheap-eats-dublin/"
+   }
+  ]
+ },
+ "bunsen": {
+  "brand": "bunsen",
+  "name": "Bunsen",
+  "category": "Burgers",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Burger",
+    "price": 9.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.dublintourism.org/cheap-eats-dublin/"
+   }
+  ]
+ },
+ "romano-s": {
+  "brand": "romano-s",
+  "name": "Romano's",
+  "category": "Italian",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Two-course lunch",
+    "price": 9.99,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin"
+   }
+  ]
+ },
+ "pablo-picante": {
+  "brand": "pablo-picante",
+  "name": "Pablo Picante",
+  "category": "Mexican",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Burrito",
+    "price": 10.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers"
+   }
+  ]
+ },
+ "xi-an-street-food": {
+  "brand": "xi-an-street-food",
+  "name": "Xi'an Street Food",
+  "category": "Chinese",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Hand-pulled biang biang noodles",
+    "price": 10.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.dublintourism.org/cheap-eats-dublin/"
+   }
+  ]
+ },
+ "musashi": {
+  "brand": "musashi",
+  "name": "Musashi",
+  "category": "Japanese",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Lunch bento (miso, sushi, drink)",
+    "price": 11.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/"
+   }
+  ]
+ },
+ "neon": {
+  "brand": "neon",
+  "name": "Neon",
+  "category": "Thai / Asian",
+  "checked": "2026-09-28",
+  "items": [
+   {
+    "name": "Asian street food bowl",
+    "price": 12.0,
+    "section": "Lunch",
+    "lunch_deal": {
+     "days": null,
+     "from": null,
+     "to": null
+    },
+    "source": "https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/"
+   }
+  ]
+ }
+}

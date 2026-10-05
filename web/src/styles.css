@@ -1,0 +1,101 @@
+:root {
+  --ground: #f3f5f2;
+  --panel: #ffffff;
+  --ink: #1b2622;
+  --muted: #5d6b65;
+  --line: #dfe5e1;
+  --land: #eceee8;
+  --road-major: #ffffff;
+  --road-minor: #fbfbf9;
+  --road-ped: #e7e1d4;
+  --water: #b9d3dc;
+  --park: #cfe2c5;
+  --ten: #0f6b5c;        /* deals up to €10 */
+  --ten-ink: #ffffff;
+  --twelve: #c9780a;     /* €10.01 – €12 */
+  --twelve-ink: #ffffff;
+  --dot: #8a968f;
+  --focus: #0f6b5c;
+  --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ground: #121816; --panel: #19211e; --ink: #e6ece9; --muted: #98a6a0; --line: #2a3531;
+    --land: #1a211f; --road-major: #3a4642; --road-minor: #28312e; --road-ped: #3a3528;
+    --water: #1f3a45; --park: #1f3326; --ten: #3fb39e; --ten-ink: #07211c; --twelve: #f0a53a; --twelve-ink: #2a1800;
+    --dot: #5f6d67; --focus: #3fb39e;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; margin: 0; }
+body { background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 14px; }
+a { color: var(--ten); }
+
+.app { height: 100%; display: grid; grid-template-rows: auto 1fr; }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 12px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+h1 { font-family: var(--display); font-weight: 700; font-size: 20px; margin: 0; letter-spacing: -0.01em; }
+h1 small { font-family: var(--body); font-weight: 400; font-size: 13px; color: var(--muted); margin-left: 8px; letter-spacing: 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-left: auto; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
+.seg button { font: 600 13px var(--body); color: var(--muted); background: none; border: 0; padding: 6px 12px; border-radius: 999px; cursor: pointer; font-variant-numeric: tabular-nums; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--panel); }
+select { font: 500 13px var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; }
+.toggle { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; color: var(--muted); font: 500 13px var(--body); }
+button:focus-visible, select:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+main { display: grid; grid-template-columns: 340px 1fr; min-height: 0; }
+aside { background: var(--panel); border-right: 1px solid var(--line); overflow-y: auto; min-height: 0; }
+.summary { padding: 12px 16px; color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--line); display: flex; gap: 14px; flex-wrap: wrap; }
+.summary b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.key { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.sw-approx { border: 1.5px dashed var(--muted); }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.item { width: 100%; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 12px 16px; cursor: pointer; }
+.item:hover { background: var(--ground); }
+.n { font-weight: 600; }
+.meta { color: var(--muted); font-size: 12px; margin: 0; }
+.item .meta { grid-column: 1; }
+.price { grid-row: 1 / span 2; grid-column: 2; align-self: start; font: 700 15px var(--display); font-variant-numeric: tabular-nums; padding: 3px 8px; border-radius: 6px; }
+.p10 { background: var(--ten); color: var(--ten-ink); }
+.p12 { background: var(--twelve); color: var(--twelve-ink); }
+.note { padding: 14px 16px 24px; margin: 0; font-size: 12px; color: var(--muted); line-height: 1.5; }
+.note a { color: inherit; }
+.error { padding: 16px; color: var(--twelve); }
+
+.detail { padding: 12px 16px 24px; display: grid; gap: 6px; }
+.detail .note { padding: 8px 0 0; }
+.back { justify-self: start; font: 600 13px var(--body); color: var(--muted); background: none; border: 0; padding: 4px 0; cursor: pointer; }
+.back:hover { color: var(--ink); }
+.detail h2 { font: 700 22px var(--display); margin: 4px 0 0; text-wrap: balance; }
+.detail h3 { font: 700 11px var(--body); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 14px 0 2px; }
+.menu li { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.menu .deal { padding: 10px 12px; margin-top: 4px; border: 1px solid var(--line); border-radius: 8px; background: var(--ground); }
+.menu-price { font-variant-numeric: tabular-nums; font-weight: 600; }
+
+.map { min-height: 0; }
+.leaflet-container { background: var(--land); font-family: var(--body); }
+.bm-major { stroke: var(--road-major); }
+.bm-minor { stroke: var(--road-minor); }
+.bm-pedestrian { stroke: var(--road-ped); }
+.bm-water { stroke: var(--water); fill: var(--water); }
+.bm-park { stroke: none; fill: var(--park); }
+.pin { font: 700 12px var(--display); font-variant-numeric: tabular-nums; padding: 2px 6px; border-radius: 6px; white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,.35); border: 1.5px solid var(--panel); transform: translate(-50%, -50%); display: inline-block; cursor: pointer; }
+.pin.approx { border-style: dashed; }
+.pin.hl { outline: 3px solid var(--ink); }
+.leaflet-control-zoom a { background: var(--panel) !important; color: var(--ink) !important; border-color: var(--line) !important; }
+.leaflet-control-attribution { background: color-mix(in srgb, var(--panel) 80%, transparent) !important; color: var(--muted) !important; }
+.leaflet-control-attribution a { color: var(--muted) !important; }
+
+@media (max-width: 760px) {
+  main { grid-template-columns: 1fr; grid-template-rows: 55% 45%; }
+  aside { order: 2; border-right: 0; border-top: 1px solid var(--line); }
+  .controls { margin-left: 0; }
+  h1 small { display: block; margin: 2px 0 0; }
+}
