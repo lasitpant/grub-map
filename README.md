@@ -5,22 +5,50 @@ Dublin lunches under €10 and €12, for office workers and students. Real pric
 ```
 pipeline/   Python: fetch OSM venues + basemap, merge curated deals, export JSON
 web/        Vue 3 + Vite + Leaflet frontend
+backend/    FastAPI + SQLite: anonymous "still this price?" votes
 ```
 
 ## Run
 ```
 python3 pipeline/export.py      # writes web/public/data/*.json
 cd web && npm install && npm run dev
+cd backend && uv run grub-map-api   # optional: vote API on :8000 (web/.env.development points at it)
+cd backend && uv run pytest         # backend tests
 ```
 Refresh OSM data: `python3 pipeline/fetch_osm.py` and `python3 pipeline/fetch_basemap.py`.
+
+## Adding deals
+Edit `pipeline/data/deals.csv`, then run `python3 pipeline/export.py`. Columns:
+
+| Column | Meaning |
+|---|---|
+| `name`, `dish`, `price_eur`, `category` | The deal |
+| `match`, `street_filter` | Name prefix (and optional street) to find the venue in OpenStreetMap; chains get one pin per branch |
+| `lat`, `lon` | Only when the venue isn't in OSM (shown as an approximate pin) |
+| `diet` | Dish-level tags, `;`-separated: `vegetarian`, `vegan`, `halal`, `gluten_free`. Only when certain. Venue-level options come from OSM `diet:*` tags automatically |
+| `student_discount`, `student_source` | e.g. `10% off with student ID` and where that's stated |
+| `checked`, `checked_how` | Date the price was collected and how: `guide` (an article), `menu` (venue's own menu), `visit` (seen in person) |
+| `source` | Link to where the price came from |
+
+Shareable links: every venue has a readable id (`aobaba`, `boojum-smithfield`) and opens directly at `/#<id>`.
 
 ## Data model
 - `venues.json`: one row per location, linked to a menu by `brand` (chains share a menu).
 - `menus.json`: `{ brand: { items: [{ name, price, section, lunch_deal, source }] } }`.
   `lunch_deal` is `null` for regular menu items, or `{ days, from, to }` for lunch offers.
 
-The frontend reads data through `web/src/lib/api.js`. Set `VITE_API_BASE` (see `web/.env.example`)
-to switch from static JSON to a backend serving `/venues`, `/venues/unpriced`, `/menus`, `/menus/:brand`.
+Venues and menus are static JSON. Live features go through `web/src/lib/api.js` to the backend at
+`VITE_API_BASE`; when it's unset (as in production until the API is deployed) the vote buttons are hidden.
+
+## Backend (votes)
+- `GET /api/feedback`: per deal, counts of "still this price" and "price changed" in the last 60 days.
+- `POST /api/feedback` `{item_id, kind: "still"|"changed", price?}`: rate-limited to 30/hour per connection.
+- `GET /api/admin/price-reports`: "price changed" reports to review. Needs `Authorization: Bearer $ADMIN_TOKEN`.
+
+Privacy: the database stores only the deal id, vote type, optional price and time. No IPs, user agents or cookies.
+Rate limiting uses an in-memory hash of the IP with a salt that rotates daily, never written to disk.
+
+Settings (environment variables): `DATABASE_PATH`, `MENUS_PATH`, `ALLOWED_ORIGINS` (comma-separated site URLs), `ADMIN_TOKEN`.
 
 ## Analytics
 Anonymous, cookieless counting with [GoatCounter](https://www.goatcounter.com). Set `VITE_GOATCOUNTER_CODE`
@@ -32,9 +60,12 @@ Anonymous, cookieless counting with [GoatCounter](https://www.goatcounter.com). 
 | `venue/<brand>` | A venue is opened; the title says whether from the `list` or the `map` |
 | `directions/<brand>` | "Walk there in Google Maps" is clicked |
 | `website/<brand>`, `source/<brand>` | The venue website or a price source is opened |
+| `share/<brand>` | The Share button is used |
+| `price-still/<brand>`, `price-changed/<brand>` | Someone confirms or disputes a price |
 | `filter/budget-10`, `filter/budget-12` | The budget toggle is changed |
-| `filter/cuisine/<name>`, `filter/show-unpriced` | Cuisine filter or unpriced layer is used |
-| `empty/<budget>/<cuisine>` | A filter combination returns no spots |
+| `filter/cuisine/<name>`, `filter/diet/<diet>` | Cuisine or diet filter is used |
+| `filter/student-discount`, `filter/show-unpriced` | Student-discount filter or unpriced layer is switched on |
+| `empty/<budget>/<cuisine>/<diet>` | A filter combination returns no spots |
 
 ## Licence
 - **Code:** MIT, see [LICENSE](LICENSE).

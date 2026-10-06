@@ -102,3 +102,45 @@ ul { list-style: none; margin: 0; padding: 0; }
   .controls { margin-left: 0; }
   h1 small { display: block; margin: 2px 0 0; }
 }
+
+/* Tags: diet options and student deals */
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0; }
+.item .tags { grid-column: 1; }
+.tag { font: 600 11px var(--body); color: var(--ten); background: color-mix(in srgb, var(--ten) 12%, transparent);
+  border-radius: 999px; padding: 2px 8px; }
+.tag-student { color: var(--twelve); background: color-mix(in srgb, var(--twelve) 15%, transparent); }
+.student { font-size: 13px; padding: 8px 12px; border-radius: 8px; background: color-mix(in srgb, var(--twelve) 12%, transparent); }
+.student .meta { display: inline; margin-left: 4px; }
+
+/* Directions + share */
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 6px; }
+.actions .directions { margin-top: 0; }
+.share { font: 600 13px var(--body); color: var(--ink); background: none; border: 1px solid var(--line); border-radius: 8px;
+  padding: 7px 12px; cursor: pointer; }
+.share:hover { background: var(--ground); }
+.share-note { overflow-wrap: anywhere; user-select: all; }
+
+/* Deal card with "still this price?" */
+.menu .deal { flex-direction: column; align-items: stretch; }
+.deal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.feedback { display: grid; gap: 6px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); }
+.fb-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.fb { font: 600 12px var(--body); color: var(--panel); background: var(--ink); border: 1px solid var(--ink); border-radius: 999px;
+  padding: 5px 10px; cursor: pointer; font-variant-numeric: tabular-nums; }
+.fb-quiet { color: var(--ink); background: none; border-color: var(--line); }
+.fb:disabled { opacity: .6; cursor: default; }
+.fb-input { width: 6.5em; font: 500 13px var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line);
+  border-radius: 6px; padding: 4px 6px; }
+.warn { color: var(--twelve); }
+
+/* About */
+.about-link { font: 600 13px var(--body); color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 999px;
+  padding: 5px 12px; cursor: pointer; }
+.about-link[aria-pressed="true"], .about-link:hover { color: var(--ink); border-color: var(--ink); }
+.intro { margin: 0; padding: 12px 16px; font-size: 13px; line-height: 1.5; border-bottom: 1px solid var(--line); }
+.inline-link { font: inherit; font-weight: 600; color: var(--ten); background: none; border: 0; padding: 0; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 2px; }
+.about { line-height: 1.55; font-size: 14px; }
+.about p { margin: 0; max-width: 62ch; }
+.about .lead { font-size: 15px; }
+.promise { display: grid; gap: 6px; padding-left: 18px; list-style: disc; margin: 0; }

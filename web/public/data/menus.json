@@ -3,9 +3,11 @@
   "brand": "bambino",
   "name": "Bambino",
   "category": "Pizza",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "bambino/large-cheese-pizza-slice",
     "name": "Large cheese pizza slice",
     "price": 4.5,
     "section": "Lunch",
@@ -13,6 +15,13 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [
+     "vegetarian"
+    ],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
    }
@@ -22,9 +31,11 @@
   "brand": "ayla",
   "name": "Ayla",
   "category": "Turkish",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "ayla/kisir-sandwich-turkish-wheat-salad-wrap",
     "name": "Kisir sandwich (Turkish wheat salad wrap)",
     "price": 4.0,
     "section": "Lunch",
@@ -32,6 +43,13 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [
+     "vegetarian"
+    ],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
    }
@@ -41,9 +59,11 @@
   "brand": "mini-india",
   "name": "Mini India",
   "category": "Indian",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "mini-india/dahi-tikki",
     "name": "Dahi tikki",
     "price": 4.99,
     "section": "Lunch",
@@ -51,6 +71,13 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [
+     "vegetarian"
+    ],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
    }
@@ -60,9 +87,11 @@
   "brand": "super-asia",
   "name": "Super Asia",
   "category": "Asian grocery",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "super-asia/10-spring-rolls-instant-noodles",
     "name": "10 spring rolls + instant noodles",
     "price": 5.0,
     "section": "Lunch",
@@ -70,6 +99,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
    }
@@ -79,9 +113,11 @@
   "brand": "disndat",
   "name": "Disndat",
   "category": "Sandwiches",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "disndat/ham-cheese-toastie-with-tayto",
     "name": "Ham & cheese toastie with Tayto",
     "price": 5.0,
     "section": "Lunch",
@@ -89,6 +125,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/"
    }
@@ -98,9 +139,11 @@
   "brand": "pi-pizza",
   "name": "Pi Pizza",
   "category": "Pizza",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "pi-pizza/pizza-slice",
     "name": "Pizza slice",
     "price": 5.0,
     "section": "Lunch",
@@ -109,17 +152,24 @@
      "from": null,
      "to": null
     },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
+    },
     "source": "https://www.dublintourism.org/cheap-eats-dublin/"
    }
   ]
  },
- "difontaine-s": {
-  "brand": "difontaine-s",
+ "difontaines": {
+  "brand": "difontaines",
   "name": "DiFontaine's",
   "category": "Pizza",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "difontaines/pizza-slice",
     "name": "Pizza slice",
     "price": 5.5,
     "section": "Lunch",
@@ -127,6 +177,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.dublintourism.org/cheap-eats-dublin/"
    }
@@ -136,9 +191,14 @@
   "brand": "umi-falafel",
   "name": "Umi Falafel",
   "category": "Middle Eastern",
-  "checked": "2026-09-28",
+  "diet": [
+   "vegan",
+   "vegetarian"
+  ],
+  "student_discount": null,
   "items": [
    {
+    "id": "umi-falafel/falafel-wrap",
     "name": "Falafel wrap",
     "price": 7.5,
     "section": "Lunch",
@@ -146,6 +206,13 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [
+     "vegetarian"
+    ],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.dublintourism.org/cheap-eats-dublin/"
    }
@@ -155,9 +222,11 @@
   "brand": "queen-of-tarts",
   "name": "Queen of Tarts",
   "category": "Café",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "queen-of-tarts/savoury-tart-or-sandwich",
     "name": "Savoury tart or sandwich",
     "price": 7.0,
     "section": "Lunch",
@@ -165,6 +234,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin"
    }
@@ -174,9 +248,11 @@
   "brand": "turkish-kebab-house",
   "name": "Turkish Kebab House",
   "category": "Turkish",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "turkish-kebab-house/doner-wrap",
     "name": "Doner wrap",
     "price": 8.0,
     "section": "Lunch",
@@ -184,6 +260,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers"
    }
@@ -193,9 +274,11 @@
   "brand": "aobaba",
   "name": "Aobaba",
   "category": "Vietnamese",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "aobaba/soup-sandwich-chips-combo",
     "name": "Soup, sandwich & chips combo",
     "price": 8.5,
     "section": "Lunch",
@@ -203,6 +286,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin"
    }
@@ -212,9 +300,13 @@
   "brand": "chopped",
   "name": "Chopped",
   "category": "Salads & wraps",
-  "checked": "2026-09-28",
+  "diet": [
+   "vegetarian"
+  ],
+  "student_discount": null,
   "items": [
    {
+    "id": "chopped/salad-wrap",
     "name": "Salad wrap",
     "price": 9.0,
     "section": "Lunch",
@@ -222,6 +314,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers"
    }
@@ -231,9 +328,16 @@
   "brand": "boojum",
   "name": "Boojum",
   "category": "Mexican",
-  "checked": "2026-09-28",
+  "diet": [
+   "vegetarian"
+  ],
+  "student_discount": {
+   "text": "10% off with student ID",
+   "source": "https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers"
+  },
   "items": [
    {
+    "id": "boojum/burrito",
     "name": "Burrito",
     "price": 9.0,
     "section": "Lunch",
@@ -241,6 +345,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.dublintourism.org/cheap-eats-dublin/"
    }
@@ -250,9 +359,11 @@
   "brand": "el-grito-taqueria",
   "name": "El Grito Taqueria",
   "category": "Mexican",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "el-grito-taqueria/three-tacos",
     "name": "Three tacos",
     "price": 9.0,
     "section": "Lunch",
@@ -260,6 +371,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.dublintourism.org/cheap-eats-dublin/"
    }
@@ -269,9 +385,11 @@
   "brand": "bunsen",
   "name": "Bunsen",
   "category": "Burgers",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "bunsen/burger",
     "name": "Burger",
     "price": 9.0,
     "section": "Lunch",
@@ -280,17 +398,24 @@
      "from": null,
      "to": null
     },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
+    },
     "source": "https://www.dublintourism.org/cheap-eats-dublin/"
    }
   ]
  },
- "romano-s": {
-  "brand": "romano-s",
+ "romanos": {
+  "brand": "romanos",
   "name": "Romano's",
   "category": "Italian",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "romanos/two-course-lunch",
     "name": "Two-course lunch",
     "price": 9.99,
     "section": "Lunch",
@@ -298,6 +423,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin"
    }
@@ -307,9 +437,14 @@
   "brand": "pablo-picante",
   "name": "Pablo Picante",
   "category": "Mexican",
-  "checked": "2026-09-28",
+  "diet": [
+   "gluten_free",
+   "vegetarian"
+  ],
+  "student_discount": null,
   "items": [
    {
+    "id": "pablo-picante/burrito",
     "name": "Burrito",
     "price": 10.0,
     "section": "Lunch",
@@ -318,17 +453,24 @@
      "from": null,
      "to": null
     },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
+    },
     "source": "https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers"
    }
   ]
  },
- "xi-an-street-food": {
-  "brand": "xi-an-street-food",
+ "xian-street-food": {
+  "brand": "xian-street-food",
   "name": "Xi'an Street Food",
   "category": "Chinese",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "xian-street-food/hand-pulled-biang-biang-noodles",
     "name": "Hand-pulled biang biang noodles",
     "price": 10.0,
     "section": "Lunch",
@@ -336,6 +478,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.dublintourism.org/cheap-eats-dublin/"
    }
@@ -345,9 +492,11 @@
   "brand": "musashi",
   "name": "Musashi",
   "category": "Japanese",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "musashi/lunch-bento-miso-sushi-drink",
     "name": "Lunch bento (miso, sushi, drink)",
     "price": 11.0,
     "section": "Lunch",
@@ -355,6 +504,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/"
    }
@@ -364,9 +518,11 @@
   "brand": "neon",
   "name": "Neon",
   "category": "Thai / Asian",
-  "checked": "2026-09-28",
+  "diet": [],
+  "student_discount": null,
   "items": [
    {
+    "id": "neon/asian-street-food-bowl",
     "name": "Asian street food bowl",
     "price": 12.0,
     "section": "Lunch",
@@ -374,6 +530,11 @@
      "days": null,
      "from": null,
      "to": null
+    },
+    "diet": [],
+    "checked": {
+     "date": "2026-09-28",
+     "how": "guide"
     },
     "source": "https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/"
    }

@@ -7,7 +7,6 @@ Output (web/public/data/):
 These files mirror the shape a future API would return, so the frontend only swaps its fetch URLs.
 """
 import csv, json, re, shutil
-from datetime import date
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -15,7 +14,7 @@ DATA = HERE / "data"
 OUT = HERE.parent / "web" / "public" / "data"
 
 def slug(s):
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+    return re.sub(r"[^a-z0-9]+", "-", s.lower().replace("'", "")).strip("-")
 
 def dedupe(hits, metres=60):
     """OSM often maps a branch twice (a node and a building way); keep one per ~60 m."""
@@ -31,11 +30,16 @@ def main():
 
     for row in csv.DictReader(open(DATA / "deals.csv")):
         brand = slug(row["name"])
-        menus.setdefault(brand, {"brand": brand, "name": row["name"], "category": row["category"],
-                                 "checked": date.today().isoformat(), "items": []})
-        menus[brand]["items"].append({
+        menu = menus.setdefault(brand, {"brand": brand, "name": row["name"], "category": row["category"],
+                                        "diet": [], "student_discount": None, "items": []})
+        if row["student_discount"]:
+            menu["student_discount"] = {"text": row["student_discount"], "source": row["student_source"]}
+        menu["items"].append({
+            "id": f"{brand}/{slug(row['dish'])}",  # stable key for "still this price?" votes
             "name": row["dish"], "price": float(row["price_eur"]), "section": "Lunch",
             "lunch_deal": {"days": None, "from": None, "to": None},  # deal hours: fill when sourced
+            "diet": [d for d in row["diet"].split(";") if d],  # dish-level, added by hand
+            "checked": {"date": row["checked"], "how": row["checked_how"]},  # how: guide | menu | visit
             "source": row["source"],
         })
         if any(v["brand"] == brand for v in venues):
@@ -48,13 +52,19 @@ def main():
         base = {"brand": brand, "name": row["name"], "category": row["category"]}
         if hits:
             for v in hits:
-                venues.append({**base, "id": slug(v["osm_id"]), "lat": v["lat"], "lon": v["lon"], "street": v["street"],
+                # Venue-level diet options from OSM; chains share one menu, so merge across branches.
+                menu["diet"] = sorted(set(menu["diet"]) | set(v.get("diet", {})))
+                vid = brand if len(hits) == 1 else f"{brand}-{slug(v['street'] or v['osm_id'])}"
+                venues.append({**base, "id": vid, "lat": v["lat"], "lon": v["lon"], "street": v["street"],
                                "website": v["website"], "hours": v["opening_hours"], "osm_id": v["osm_id"], "approx": False})
         elif row["lat"]:
-            venues.append({**base, "id": f"{brand}-manual", "lat": float(row["lat"]), "lon": float(row["lon"]),
+            venues.append({**base, "id": brand, "lat": float(row["lat"]), "lon": float(row["lon"]),
                            "street": "", "website": "", "hours": "", "osm_id": "", "approx": True})
         else:
             unmatched.append(row["name"])
+
+    ids = [v["id"] for v in venues]
+    assert len(ids) == len(set(ids)), f"duplicate venue ids: {sorted(i for i in ids if ids.count(i) > 1)}"
 
     placed = {v["osm_id"] for v in venues}
     others = [{"name": v["name"], "lat": round(v["lat"], 5), "lon": round(v["lon"], 5), "amenity": v["amenity"]}

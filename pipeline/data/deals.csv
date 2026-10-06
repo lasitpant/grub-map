@@ -1,21 +1,21 @@
-name,match,street_filter,dish,price_eur,category,source,lat,lon
-Bambino,Bambino,,Large cheese pizza slice,4.50,Pizza,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,,
-Ayla,,,"Kisir sandwich (Turkish wheat salad wrap)",4.00,Turkish,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3478,-6.2682
-Mini India,,,Dahi tikki,4.99,Indian,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3462,-6.2593
-Super Asia,,,10 spring rolls + instant noodles,5.00,Asian grocery,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3525,-6.2665
-Disndat,,,Ham & cheese toastie with Tayto,5.00,Sandwiches,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3434,-6.2645
-Pi Pizza,,,Pizza slice,5.00,Pizza,https://www.dublintourism.org/cheap-eats-dublin/,53.3423,-6.2647
-DiFontaine's,,,Pizza slice,5.50,Pizza,https://www.dublintourism.org/cheap-eats-dublin/,53.3447,-6.2672
-Umi Falafel,Umi Falafel,,Falafel wrap,7.50,Middle Eastern,https://www.dublintourism.org/cheap-eats-dublin/,,
-Queen of Tarts,,,Savoury tart or sandwich,7.00,Café,https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin,53.3448,-6.2703
-Turkish Kebab House,Turkish Kebab House,,Doner wrap,8.00,Turkish,https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers,,
-Aobaba,Aobaba,,"Soup, sandwich & chips combo",8.50,Vietnamese,https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin,,
-Chopped,Chopped,,Salad wrap,9.00,Salads & wraps,https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers,,
-Boojum,Boojum,,Burrito,9.00,Mexican,https://www.dublintourism.org/cheap-eats-dublin/,,
-El Grito Taqueria,El Grito,,Three tacos,9.00,Mexican,https://www.dublintourism.org/cheap-eats-dublin/,,
-Bunsen,Bunsen,,Burger,9.00,Burgers,https://www.dublintourism.org/cheap-eats-dublin/,,
-Romano's,Romano's,,Two-course lunch,9.99,Italian,https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin,,
-Pablo Picante,Pablo Picante,,Burrito,10.00,Mexican,https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers,,
-Xi'an Street Food,,,Hand-pulled biang biang noodles,10.00,Chinese,https://www.dublintourism.org/cheap-eats-dublin/,53.3483,-6.2686
-Musashi,Musashi,,"Lunch bento (miso, sushi, drink)",11.00,Japanese,https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/,,
-Neon,Neon,,Asian street food bowl,12.00,Thai / Asian,https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/,,
+name,match,street_filter,dish,price_eur,category,diet,student_discount,student_source,checked,checked_how,source,lat,lon
+Bambino,Bambino,,Large cheese pizza slice,4.50,Pizza,vegetarian,,,2026-09-28,guide,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,,
+Ayla,,,Kisir sandwich (Turkish wheat salad wrap),4.00,Turkish,vegetarian,,,2026-09-28,guide,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3478,-6.2682
+Mini India,,,Dahi tikki,4.99,Indian,vegetarian,,,2026-09-28,guide,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3462,-6.2593
+Super Asia,,,10 spring rolls + instant noodles,5.00,Asian grocery,,,,2026-09-28,guide,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3525,-6.2665
+Disndat,,,Ham & cheese toastie with Tayto,5.00,Sandwiches,,,,2026-09-28,guide,https://www.irishtimes.com/food/2026/01/26/five-places-in-dublin-city-centre-where-you-can-get-a-5-lunch-really/,53.3434,-6.2645
+Pi Pizza,,,Pizza slice,5.00,Pizza,,,,2026-09-28,guide,https://www.dublintourism.org/cheap-eats-dublin/,53.3423,-6.2647
+DiFontaine's,,,Pizza slice,5.50,Pizza,,,,2026-09-28,guide,https://www.dublintourism.org/cheap-eats-dublin/,53.3447,-6.2672
+Umi Falafel,Umi Falafel,,Falafel wrap,7.50,Middle Eastern,vegetarian,,,2026-09-28,guide,https://www.dublintourism.org/cheap-eats-dublin/,,
+Queen of Tarts,,,Savoury tart or sandwich,7.00,Café,,,,2026-09-28,guide,https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin,53.3448,-6.2703
+Turkish Kebab House,Turkish Kebab House,,Doner wrap,8.00,Turkish,,,,2026-09-28,guide,https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers,,
+Aobaba,Aobaba,,"Soup, sandwich & chips combo",8.50,Vietnamese,,,,2026-09-28,guide,https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin,,
+Chopped,Chopped,,Salad wrap,9.00,Salads & wraps,,,,2026-09-28,guide,https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers,,
+Boojum,Boojum,,Burrito,9.00,Mexican,,10% off with student ID,https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers,2026-09-28,guide,https://www.dublintourism.org/cheap-eats-dublin/,,
+El Grito Taqueria,El Grito,,Three tacos,9.00,Mexican,,,,2026-09-28,guide,https://www.dublintourism.org/cheap-eats-dublin/,,
+Bunsen,Bunsen,,Burger,9.00,Burgers,,,,2026-09-28,guide,https://www.dublintourism.org/cheap-eats-dublin/,,
+Romano's,Romano's,,Two-course lunch,9.99,Italian,,,,2026-09-28,guide,https://discover.hubpages.com/food/Top-10-Lunches-For-Under-10-Euro-In-Dublin-Best-Lunch-In-Dublin,,
+Pablo Picante,Pablo Picante,,Burrito,10.00,Mexican,,,,2026-09-28,guide,https://www.canbe.ie/blog.html/cheapest-restaurants-in-dublin-for-travelers,,
+Xi'an Street Food,,,Hand-pulled biang biang noodles,10.00,Chinese,,,,2026-09-28,guide,https://www.dublintourism.org/cheap-eats-dublin/,53.3483,-6.2686
+Musashi,Musashi,,"Lunch bento (miso, sushi, drink)",11.00,Japanese,,,,2026-09-28,guide,https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/,,
+Neon,Neon,,Asian street food bowl,12.00,Thai / Asian,,,,2026-09-28,guide,https://www.lovedublin.org/where-to-eat-in-dublin-on-a-budget/,,

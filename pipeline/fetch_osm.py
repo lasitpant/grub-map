@@ -5,6 +5,8 @@ from pathlib import Path
 DATA = Path(__file__).parent / "data"
 
 BBOX = (53.3330, -6.2850, 53.3580, -6.2350)  # south, west, north, east: canals-ish city centre
+DIET_KEYS = ("diet:vegetarian", "diet:vegan", "diet:halal", "diet:gluten_free")
+
 QUERY = f"""
 [out:json][timeout:60];
 nwr["amenity"~"^(cafe|restaurant|fast_food|pub)$"]["name"]{BBOX};
@@ -28,6 +30,8 @@ def main():
             "amenity": t.get("amenity"), "cuisine": t.get("cuisine", ""),
             "street": t.get("addr:street", ""), "website": t.get("website") or t.get("contact:website", ""),
             "opening_hours": t.get("opening_hours", ""),
+            # diet:* values are "yes" (options available) or "only" (fully vegan etc.)
+            "diet": {k[5:]: t[k] for k in DIET_KEYS if t.get(k) in ("yes", "only")},
         })
     json.dump(venues, open(DATA / "osm_venues.json", "w"), indent=1, ensure_ascii=False)
     print(f"saved {len(venues)} venues")
