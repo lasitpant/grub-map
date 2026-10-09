@@ -1,7 +1,7 @@
 <script setup>
-import { computed, ref } from "vue";
-import { state, selected, lunchDeals, euro, tier, DIETS, shortDate } from "../lib/store";
-import { track } from "../lib/analytics";
+import { computed } from "vue";
+import { state, selected, lunchDeals, euro, tier, DIETS, shortDate, dealWhen } from "../lib/store";
+import { host, useVenueActions } from "../lib/actions";
 import DealFeedback from "./DealFeedback.vue";
 
 const menu = computed(() => (selected.value ? state.menus[selected.value.brand] : null));
@@ -15,41 +15,9 @@ const sections = computed(() => {
   }
   return Object.entries(groups);
 });
-const dealWhen = (d) => {
-  const { days, from, to } = d.lunch_deal;
-  if (!days && !from) return "Lunch hours not confirmed";
-  return [days, from && to ? `${from}–${to}` : ""].filter(Boolean).join(" · ");
-};
 const CHECKED_HOW = { guide: "Price from", menu: "Price from menu at", visit: "Price checked in person, see" };
 
-// Walking directions in Google Maps (opens the app on phones if installed).
-// Hand-placed venues use a name search instead, since their pin is only approximate.
-const directionsUrl = computed(() => {
-  const v = selected.value;
-  if (!v) return "";
-  const base = "https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=";
-  return base + encodeURIComponent(v.approx ? `${v.name}, Dublin` : `${v.lat},${v.lon}`);
-});
-const clicked = (kind) => track(`${kind}/${selected.value.brand}`, `${selected.value.name} · ${kind}`);
-
-// Share this venue: the phone's share sheet where available, otherwise copy the link.
-const shareNote = ref("");
-async function share() {
-  const v = selected.value;
-  const url = `${location.origin}${location.pathname}#${v.id}`;
-  const text = `${v.name}: lunch from ${euro(v.price)} on Grub Map`;
-  clicked("share");
-  try {
-    if (navigator.share) return await navigator.share({ title: v.name, text, url });
-    await navigator.clipboard.writeText(url);
-    shareNote.value = "Link copied";
-  } catch (e) {
-    if (e?.name !== "AbortError") shareNote.value = url; // clipboard blocked: show the link to copy by hand
-  }
-  setTimeout(() => (shareNote.value = ""), 4000);
-}
-
-const host = (url) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return url; } };
+const { directionsUrl, clicked, share, shareNote } = useVenueActions(selected);
 </script>
 
 <template>

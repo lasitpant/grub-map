@@ -17,6 +17,9 @@ cd backend && uv run pytest         # backend tests
 ```
 Refresh OSM data: `python3 pipeline/fetch_osm.py` and `python3 pipeline/fetch_basemap.py`.
 
+The map uses [OpenFreeMap](https://openfreemap.org) vector tiles (free, no API key). Set `VITE_TILE_URL=vector` to use the bundled
+lightweight basemap from `fetch_basemap.py` instead (see `web/.env.example`).
+
 ## Adding deals
 Edit `pipeline/data/deals.csv`, then run `python3 pipeline/export.py`. Columns:
 

@@ -16,7 +16,8 @@ export const state = reactive({
   diet: "",           // "", vegetarian, vegan, halal, gluten_free
   studentOnly: false,
   showUnpriced: false,
-  selectedId: null,
+  selectedId: null,   // venue in focus: highlighted pin with its popup open
+  panelOpen: false,   // its full menu is showing in the side panel
   showAbout: false,
   ...load(),
 });
@@ -38,6 +39,11 @@ export const DIETS = { vegetarian: "Veggie", vegan: "Vegan", halal: "Halal", glu
 export const lunchDeals = (menu) => (menu?.items ?? []).filter((i) => i.lunch_deal != null);
 export const cheapestDeal = (menu) => Math.min(...lunchDeals(menu).map((i) => i.price));
 // Diet options at a venue: venue-level tags from OpenStreetMap plus dish-level tags from our data.
+export const dealWhen = (d) => {
+  const { days, from, to } = d.lunch_deal;
+  if (!days && !from) return "Lunch hours not confirmed";
+  return [days, from && to ? `${from}–${to}` : ""].filter(Boolean).join(" · ");
+};
 export const venueDiets = (menu) => [...new Set([...(menu?.diet ?? []), ...lunchDeals(menu).flatMap((i) => i.diet ?? [])])];
 
 // Every priced venue, joined with its menu facts. Shared links open from this, even if filters hide the venue.
@@ -62,7 +68,7 @@ export const rows = computed(() =>
 export const categories = computed(() => [...new Set(state.venues.map((v) => v.category))].sort());
 export const selected = computed(() => priced.value.find((v) => v.id === state.selectedId) ?? null);
 
-// Open a venue's panel. `from` says where the click came from ("list", "map" or "link").
+// Focus a venue: its popup opens on the map. `from` says where the click came from ("list", "map" or "link").
 export function selectVenue(v, from) {
   state.selectedId = v.id;
   track(`venue/${v.brand}`, `${v.name} · ${from}`);
@@ -78,7 +84,11 @@ watch(() => state.showAbout, (on) => {
   state.selectedId = null;
   track("about", "About page");
 });
-watch(() => state.selectedId, (id) => id && (state.showAbout = false));
+watch(() => state.selectedId, (id) => (id ? (state.showAbout = false) : (state.panelOpen = false)));
+export function openPanel() {
+  state.panelOpen = true;
+  track(`menu/${selected.value.brand}`, `${selected.value.name} · full menu`);
+}
 export function openFromHash() {
   const id = decodeURIComponent(location.hash.slice(1));
   if (id === "about") return void (state.showAbout = true);

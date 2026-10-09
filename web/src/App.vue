@@ -48,7 +48,7 @@ onMounted(async () => {
       <aside>
         <p v-if="error" class="error">{{ error }}</p>
         <AboutPanel v-else-if="state.showAbout" />
-        <VenueMenu v-else-if="state.selectedId" />
+        <VenueMenu v-else-if="state.panelOpen && state.selectedId" />
         <VenueList v-else />
       </aside>
       <LunchMap />
